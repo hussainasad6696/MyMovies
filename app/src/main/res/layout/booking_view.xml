@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutDescription="@xml/booking_view_scene">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/movieImageCard"
+            android:layout_width="0dp"
+            android:layout_height="350dp"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="50dp"
+            app:cardCornerRadius="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/movieImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/imdb" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/movieImageCard">
+
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/money_heist"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/ratingTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rating"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@id/title"
+                app:layout_constraintTop_toBottomOf="@id/title" />
+
+            <TextView
+                android:id="@+id/rating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/_4_8"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/ratingTxt"
+                app:layout_constraintStart_toEndOf="@id/ratingTxt"
+                app:layout_constraintTop_toTopOf="@id/ratingTxt" />
+
+            <ImageView
+                android:id="@+id/star"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/ic_baseline_star_24"
+                app:layout_constraintBottom_toBottomOf="@id/rating"
+                app:layout_constraintStart_toEndOf="@id/rating"
+                app:layout_constraintTop_toTopOf="@id/rating"
+                app:tint="@color/rating_yellow" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="2dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="5dp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/star"
+                app:layout_constraintStart_toEndOf="@id/star"
+                app:layout_constraintTop_toTopOf="@id/star" />
+
+            <TextView
+                android:id="@+id/votesTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/votes"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/divider"
+                app:layout_constraintStart_toEndOf="@id/divider"
+                app:layout_constraintTop_toTopOf="@id/divider" />
+
+            <TextView
+                android:id="@+id/numberOfVotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/_1023"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/votesTxt"
+                app:layout_constraintStart_toEndOf="@id/votesTxt"
+                app:layout_constraintTop_toTopOf="@id/votesTxt" />
+
+            <TextView
+                android:id="@+id/adultTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/adult"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/numberOfVotes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/numberOfVotes"
+                app:layout_constraintTop_toTopOf="@id/numberOfVotes" />
+
+            <TextView
+                android:id="@+id/adult"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/no"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/adultTxt"
+                app:layout_constraintStart_toEndOf="@id/adultTxt"
+                app:layout_constraintTop_toTopOf="@id/adultTxt" />
+
+            <TextView
+                android:id="@+id/originalLanguageTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/original_language"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@id/ratingTxt"
+                app:layout_constraintTop_toBottomOf="@id/ratingTxt" />
+
+            <TextView
+                android:id="@+id/originalLanguage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/original_language"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/originalLanguageTxt"
+                app:layout_constraintStart_toEndOf="@+id/originalLanguageTxt"
+                app:layout_constraintTop_toTopOf="@id/originalLanguageTxt" />
+
+
+            <TextView
+                android:id="@+id/originalTitleTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/original_title"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@id/originalLanguageTxt"
+                app:layout_constraintTop_toBottomOf="@id/originalLanguageTxt" />
+
+            <TextView
+                android:id="@+id/originalTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/title"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/originalTitleTxt"
+                app:layout_constraintStart_toEndOf="@+id/originalTitleTxt"
+                app:layout_constraintTop_toTopOf="@id/originalTitleTxt" />
+
+
+            <TextView
+                android:id="@+id/releaseTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/release_date"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@id/originalTitleTxt"
+                app:layout_constraintTop_toBottomOf="@id/originalTitleTxt" />
+
+            <TextView
+                android:id="@+id/release"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/_12_6_12"
+                android:textColor="@android:color/holo_green_dark"
+                app:layout_constraintBottom_toBottomOf="@id/releaseTxt"
+                app:layout_constraintStart_toEndOf="@+id/releaseTxt"
+                app:layout_constraintTop_toTopOf="@id/releaseTxt" />
+
+
+            <TextView
+                android:id="@+id/popularityTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/popularity"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/release"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/release"
+                app:layout_constraintTop_toTopOf="@id/release" />
+
+            <TextView
+                android:id="@+id/popularity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/_2_0"
+                android:textColor="@color/white"
+                app:layout_constraintBottom_toBottomOf="@id/popularityTxt"
+                app:layout_constraintStart_toEndOf="@id/popularityTxt"
+                app:layout_constraintTop_toTopOf="@id/popularityTxt" />
+
+
+            <TextView
+                android:id="@+id/overviewTxt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/synopsis"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/releaseTxt" />
+
+
+            <TextView
+                android:id="@+id/overview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="20dp"
+                android:padding="5dp"
+                android:text="@string/movie"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/overviewTxt"
+                app:layout_constraintTop_toBottomOf="@id/overviewTxt" />
+
+
+            <TextView
+                android:id="@+id/buyTicket"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_bg"
+                android:elevation="5dp"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="10dp"
+                android:text="@string/buy_ticket"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
+</layout>
